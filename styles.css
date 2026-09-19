@@ -42,12 +42,34 @@ a { color: inherit; font: inherit; text-decoration: none; }
 .brand-mark i:nth-child(2) { height: 19px; }
 .brand-mark i:nth-child(3) { height: 15px; opacity: .75; }
 
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: auto;
+  padding: 9px 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  font: 500 .72rem/1 var(--mono);
+  cursor: pointer;
+  transition: border-color .2s, color .2s;
+}
+
+.lang-toggle:hover { border-color: var(--accent); color: var(--text); }
+.lang-option { transition: color .2s; }
+.lang-divider { opacity: .5; }
+.lang-toggle[data-active="zh"] .lang-option[data-lang="zh"],
+.lang-toggle[data-active="en"] .lang-option[data-lang="en"] { color: var(--accent); font-weight: 500; }
+
 .hero { position: relative; display: grid; grid-template-rows: 1fr auto; min-height: calc(100svh - 100px); padding: clamp(40px, 8vh, 110px) 0 6vh; }
 .hero-copy { position: relative; z-index: 1; align-self: center; width: min(710px, 73vw); }
 .eyebrow { margin-bottom: 24px; color: var(--muted); font: 500 .67rem/1.2 var(--mono); }
 .eyebrow-text { position: relative; padding-left: 15px; }
 .eyebrow-text::before { position: absolute; top: 50%; left: 0; width: 7px; height: 1px; background: var(--accent); content: ""; }
 h1 { max-width: 680px; font: 500 clamp(3.8rem, 8.2vw, 8rem)/.92 var(--display); letter-spacing: -.095em; }
+html[lang="zh-CN"] h1 { letter-spacing: -.02em; }
 .title-line { display: block; }
 .hero-intro { max-width: 400px; margin-top: 31px; color: var(--muted); font-size: clamp(.95rem, 1.3vw, 1.1rem); line-height: 1.55; }
 
